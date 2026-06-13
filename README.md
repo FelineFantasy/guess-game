@@ -28,8 +28,8 @@ A classic "Guess the Number" game in Rust. The computer picks a random number, a
 ## ⚙️ Installation
 ### Via Git:
 ```bash
-git clone https://github.com/FelineFantasy/guess_game.git
-cd guess_game
+git clone https://github.com/FelineFantasy/guess-game.git
+cd guess-game
 ```
 
 ### Add to Cargo.toml:
