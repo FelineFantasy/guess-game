@@ -49,6 +49,5 @@ cargo run
 - Cargo
 
 ## 👤 Author
-**FelineFantasy**
-
-License: MIT
+- **FelineFantasy**
+- **License**: MIT
