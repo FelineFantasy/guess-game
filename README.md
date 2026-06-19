@@ -36,7 +36,7 @@ cd guess-game
 ```toml
 [dependencies]
 rand = "0.8"
-ask_input = "0.1.0"
+ask_input = "0.2.0"
 ```
 
 ## 🚀 Running
