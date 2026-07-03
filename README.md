@@ -31,6 +31,7 @@ git clone https://github.com/FelineFantasy/guess-game.git
 cd guess-game
 cargo build --release
 ./target/release/guess-game
+```
 
 ## 📋 Requirements
 - Rust 1.70+
