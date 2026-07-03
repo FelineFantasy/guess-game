@@ -6,7 +6,6 @@ A classic "Guess the Number" game in Rust. The computer picks a random number, a
 - [Description](#description)
 - [How to Play](#how-to-play)
 - [Installation](#installation)
-- [Running](#running)
 - [Requirements](#requirements)
 - [Author](#author)
 
@@ -25,24 +24,13 @@ A classic "Guess the Number" game in Rust. The computer picks a random number, a
 3. Get a hint ("higher" or "lower")
 4. Repeat until you guess!
 
-## ⚙️ Installation
-### Via Git:
+## 🛠️ Installation
+
 ```bash
 git clone https://github.com/FelineFantasy/guess-game.git
 cd guess-game
-```
-
-### Add to Cargo.toml:
-```toml
-[dependencies]
-rand = "0.8"
-ask_input = "0.2.0"
-```
-
-## 🚀 Running
-```bash
-cargo run
-```
+cargo build --release
+./target/release/guess-game
 
 ## 📋 Requirements
 - Rust 1.70+
