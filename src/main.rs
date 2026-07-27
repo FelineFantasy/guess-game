@@ -12,16 +12,33 @@ fn main() {
     println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
 
     loop {
-        print!("Введите число: ");
+        print!("Введите число (или 'exit' для выхода): ");
         
-        let guess: i32 = match input() {
-            Ok(num) => num,
+        let guess = match input::<String>() {
+            Ok(text) => {
+                if text.trim().to_lowercase() == "exit" {
+                    println!("Выход из игры.");
+                    return;
+                }
+                match text.trim().parse::<i32>() {
+                    Ok(num) => num,
+                    Err(_) => {
+                        println!("Ошибка! Введите целое число от 1 до 100.");
+                        continue;
+                    }
+                }
+            }
             Err(_) => {
-                println!("Ошибка! Введите целое число.");
+                println!("Ошибка ввода!");
                 continue;
             }
         };
-        
+
+        if guess < 1 || guess > 100 {
+            println!("Число должно быть от 1 до 100!");
+            continue;
+        }
+
         count += 1;
 
         if guess == secret {
