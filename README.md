@@ -2,13 +2,6 @@
 
 A classic "Guess the Number" game in Rust. The computer picks a random number, and you have to guess it in the minimum number of attempts!
 
-## 📋 Table of Contents
-- [Description](#description)
-- [How to Play](#how-to-play)
-- [Installation](#installation)
-- [Requirements](#requirements)
-- [Author](#author)
-
 ## 📝 Description
 **Guess Game** is a simple console game where you need to guess a random number from 1 to 100. After each attempt, the game will hint whether your number is higher or lower.
 
