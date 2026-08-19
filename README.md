@@ -20,7 +20,7 @@ A classic "Guess the Number" game in Rust. The computer picks a random number, a
 ## 🛠️ Installation
 
 ```bash
-git clone https://github.com/FelineFantasy/guess-game.git
+git clone https://github.com/FelineFantasy/guess-game
 cd guess-game
 cargo build --release
 ./target/release/guess-game
