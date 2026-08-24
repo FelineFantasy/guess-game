@@ -5,6 +5,24 @@ const SEPARATOR: &str = "=";
 const SEPARATOR_LEN: usize = 50;
 
 fn main() {
+    loop {
+        play_game();
+        println!("Сыграем ещё? (y/n)");
+        let answer = match input::<String>() {
+            Ok(text) => text.trim().to_lowercase(),
+            Err(_) => {
+                println!("Ошибка ввода. Выход.");
+                break;
+            }
+        };
+        if answer != "y" {
+            println!("Выход из игры.");
+            break;
+        }
+    }
+}
+
+fn play_game() {
     let mut count = 0;
     let secret = rand::thread_rng().gen_range(1..=100);
 
@@ -13,7 +31,7 @@ fn main() {
 
     loop {
         print!("Введите число (или 'exit' для выхода): ");
-        
+
         let guess = match input::<String>() {
             Ok(text) => {
                 if text.trim().to_lowercase() == "exit" {
