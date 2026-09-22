@@ -3,6 +3,8 @@ use rand::Rng;
 
 const SEPARATOR: &str = "=";
 const SEPARATOR_LEN: usize = 50;
+const MIN_NUMBER: i32 = 1;
+const MAX_NUMBER: i32 = 100;
 
 fn main() {
     loop {
@@ -24,9 +26,9 @@ fn main() {
 
 fn play_game() {
     let mut count = 0;
-    let secret = rand::thread_rng().gen_range(1..=100);
+    let secret = rand::thread_rng().gen_range(MIN_NUMBER..=MAX_NUMBER);
 
-    println!("Угадай число от 1 до 100!");
+    println!("Угадай число от {} до {}!", MIN_NUMBER, MAX_NUMBER);
     println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
 
     loop {
@@ -41,7 +43,7 @@ fn play_game() {
                 match text.trim().parse::<i32>() {
                     Ok(num) => num,
                     Err(_) => {
-                        println!("Ошибка! Введите целое число от 1 до 100.");
+                        println!("Ошибка! Введите целое число от {} до {}.", MIN_NUMBER, MAX_NUMBER);
                         continue;
                     }
                 }
@@ -52,8 +54,8 @@ fn play_game() {
             }
         };
 
-        if guess < 1 || guess > 100 {
-            println!("Число должно быть от 1 до 100!");
+        if guess < MIN_NUMBER || guess > MAX_NUMBER {
+            println!("Число должно быть от {} до {}!", MIN_NUMBER, MAX_NUMBER);
             continue;
         }
 
