@@ -6,6 +6,10 @@ const SEPARATOR_LEN: usize = 50;
 const MIN_NUMBER: i32 = 1;
 const MAX_NUMBER: i32 = 100;
 
+fn print_separator() {
+    println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
+}
+
 fn main() {
     loop {
         play_game();
@@ -29,7 +33,7 @@ fn play_game() {
     let secret = rand::thread_rng().gen_range(MIN_NUMBER..=MAX_NUMBER);
 
     println!("Угадай число от {} до {}!", MIN_NUMBER, MAX_NUMBER);
-    println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
+    print_separator();
 
     loop {
         print!("Введите число (или 'exit' для выхода): ");
@@ -62,16 +66,16 @@ fn play_game() {
         count += 1;
 
         if guess == secret {
-            println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
+            print_separator();
             println!("Ты угадал за {} попыток!", count);
-            println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
+            print_separator();
             break;
         } else if guess < secret {
             println!("Больше {}!", guess);
         } else {
             println!("Меньше {}!", guess);
         }
-        println!("{}", SEPARATOR.repeat(SEPARATOR_LEN));
+        print_separator();
     }
 
     println!("Нажми Enter для выхода...");
